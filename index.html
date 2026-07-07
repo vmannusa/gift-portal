@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Gift for the Future</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom font import for a warmer feel */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <main class="max-w-3xl mx-auto px-4 py-12 sm:px-6 sm:py-16">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-16">
+            <div class="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-full mb-6">
+                <i data-lucide="sprout" class="w-8 h-8 text-indigo-600"></i>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-4">A Gift for the Future</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                As we prepare to welcome our new son this August alongside our wonderful daughter, many have kindly asked about gifts. Instead of toys that get outgrown, we're building a foundation for their future. 
+            </p>
+            <p class="text-md text-slate-500 mt-4 font-medium italic">
+                Please, no pressure to give large amounts. Time is the greatest multiplier!
+            </p>
+        </header>
+
+        <!-- The Power of One Dollar -->
+        <section class="glass-card rounded-3xl p-8 mb-12 border-t-4 border-t-indigo-500">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-900">The Magic of Compounding</h2>
+                <p class="text-slate-600 mt-2">Historically, the stock market grows at an average of 10% per year (or roughly <strong>8%</strong> when adjusted for inflation). Because they have so much time ahead of them, here is what just <strong>$1.00</strong> given today becomes for them at an 8% return:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="p-6 bg-white rounded-2xl shadow-sm">
+                    <div class="text-sm font-semibold text-indigo-600 mb-1">AGE 18</div>
+                    <div class="text-sm text-slate-500 mb-3">College & First Steps</div>
+                    <div class="text-3xl font-bold text-slate-900">~$4</div>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-sm border-2 border-indigo-50">
+                    <div class="text-sm font-semibold text-indigo-600 mb-1">AGE 30</div>
+                    <div class="text-sm text-slate-500 mb-3">House & Milestones</div>
+                    <div class="text-3xl font-bold text-slate-900">~$10</div>
+                </div>
+                <div class="p-6 bg-indigo-600 rounded-2xl shadow-sm text-white transform md:scale-105 transition-transform">
+                    <div class="text-sm font-semibold text-indigo-200 mb-1">AGE 65</div>
+                    <div class="text-sm text-indigo-100 mb-3">Retirement</div>
+                    <div class="text-4xl font-bold">~$149</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Grid -->
+        <section class="mb-16">
+            <h3 class="text-xl font-bold text-center mb-8 text-slate-900">See the impact of a small gift today:</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-center border-collapse">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200">
+                            <th class="pb-4 text-slate-500 font-semibold w-1/4">Gift Today</th>
+                            <th class="pb-4 text-slate-500 font-semibold w-1/4">Value at 18</th>
+                            <th class="pb-4 text-slate-500 font-semibold w-1/4">Value at 30</th>
+                            <th class="pb-4 text-slate-500 font-semibold w-1/4">Value at 65</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-lg">
+                        <tr class="border-b border-slate-100">
+                            <td class="py-4 font-bold text-emerald-600">$5</td>
+                            <td class="py-4 text-slate-700">$20</td>
+                            <td class="py-4 text-slate-700">$50</td>
+                            <td class="py-4 font-bold text-indigo-600">$744</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="py-4 font-bold text-emerald-600">$10</td>
+                            <td class="py-4 text-slate-700">$40</td>
+                            <td class="py-4 text-slate-700">$101</td>
+                            <td class="py-4 font-bold text-indigo-600">$1,488</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-4 font-bold text-emerald-600">$25</td>
+                            <td class="py-4 text-slate-700">$100</td>
+                            <td class="py-4 text-slate-700">$252</td>
+                            <td class="py-4 font-bold text-indigo-600">$3,720</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Interactive Calculator -->
+        <section class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 mb-16">
+            <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">Calculate Your Impact</h3>
+            
+            <div class="max-w-md mx-auto mb-8 space-y-6">
+                <!-- Amount Input -->
+                <div>
+                    <label for="customAmount" class="block text-sm font-semibold text-slate-600 mb-2">Gift Amount</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span class="text-slate-500 font-bold">$</span>
+                        </div>
+                        <input type="number" id="customAmount" min="1" value="15" class="block w-full pl-8 pr-4 py-3 text-xl font-bold text-slate-900 bg-slate-50 border-2 border-slate-200 rounded-2xl focus:ring-0 focus:border-indigo-500 transition-colors" placeholder="Enter amount">
+                    </div>
+                </div>
+
+                <!-- Rate Slider -->
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <label for="customRate" class="block text-sm font-semibold text-slate-600">Assumed Annual Return</label>
+                        <span id="rateLabel" class="text-sm font-bold text-indigo-600">8%</span>
+                    </div>
+                    <input type="range" id="customRate" min="5" max="12" step="1" value="8" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                    <div class="flex justify-between text-xs text-slate-400 mt-2 font-medium">
+                        <span>Conservative (5%)</span>
+                        <span>Aggressive (12%)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calculation Results -->
+            <div class="flex flex-wrap justify-center gap-4 text-slate-700">
+                <div class="bg-slate-50 px-5 py-3 rounded-xl border border-slate-100">At 18: <span id="calc18" class="font-bold text-slate-900 ml-1 text-lg"></span></div>
+                <div class="bg-slate-50 px-5 py-3 rounded-xl border border-slate-100">At 30: <span id="calc30" class="font-bold text-slate-900 ml-1 text-lg"></span></div>
+                <div class="bg-indigo-50 px-5 py-3 rounded-xl border border-indigo-100">At 65: <span id="calc65" class="font-bold text-indigo-700 ml-1 text-xl"></span></div>
+            </div>
+        </section>
+
+        <!-- Call to Action: 529 Links -->
+        <section class="text-center">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Contribute to their journey</h2>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                Select a plan below to make a secure contribution. Whether it's $5 or $50, we are deeply grateful for your investment in their future.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- Replace '#' with your daughter's actual 529 link -->
+                <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-rose-500 hover:bg-rose-600 transition-colors shadow-lg shadow-rose-200">
+                    <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                    Daughter's 529 Plan
+                </a>
+                
+                <!-- Replace '#' with your son's actual 529 link -->
+                <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-blue-500 hover:bg-blue-600 transition-colors shadow-lg shadow-blue-200">
+                    <i data-lucide="baby" class="w-5 h-5 mr-2"></i>
+                    Son's 529 Plan
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Calculations compound annually. This tool is for educational purposes only.</p>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Constants
+        const YEARS_18 = 18;
+        const YEARS_30 = 30;
+        const YEARS_65 = 65;
+
+        // Elements
+        const inputAmount = document.getElementById('customAmount');
+        const inputRate = document.getElementById('customRate');
+        const rateLabel = document.getElementById('rateLabel');
+        const calc18 = document.getElementById('calc18');
+        const calc30 = document.getElementById('calc30');
+        const calc65 = document.getElementById('calc65');
+
+        // Formatter for currency
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        });
+
+        // Calculate Future Value: FV = PV * (1 + r)^n
+        function calculateCompound() {
+            let amount = parseFloat(inputAmount.value);
+            if (isNaN(amount) || amount <= 0) amount = 0;
+
+            let ratePercent = parseFloat(inputRate.value);
+            let rateDecimal = ratePercent / 100;
+
+            // Update UI label for the rate
+            rateLabel.textContent = ratePercent + '%';
+
+            const val18 = amount * Math.pow((1 + rateDecimal), YEARS_18);
+            const val30 = amount * Math.pow((1 + rateDecimal), YEARS_30);
+            const val65 = amount * Math.pow((1 + rateDecimal), YEARS_65);
+
+            calc18.textContent = formatter.format(val18);
+            calc30.textContent = formatter.format(val30);
+            calc65.textContent = formatter.format(val65);
+        }
+
+        // Event listeners
+        inputAmount.addEventListener('input', calculateCompound);
+        inputRate.addEventListener('input', calculateCompound);
+        
+        // Initial Calculation
+        calculateCompound();
+    </script>
+</body>
+</html>
