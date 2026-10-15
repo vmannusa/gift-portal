@@ -104,34 +104,37 @@
         <section class="text-center">
             <h2 class="text-2xl font-bold text-slate-900 mb-6">Contribute to their journey</h2>
             <p class="text-slate-600 mb-8 max-w-lg mx-auto">
-                Select a plan below to make a secure contribution. Whether it's $5 or $50, we are deeply grateful for your investment in their future.
+                Tap a name below to send a gift through Venmo. Whether it's $5 or $50, we are deeply grateful for your investment in their future.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <!-- Replace '#' with your daughter's actual 529 link -->
-                <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-rose-500 hover:bg-rose-600 transition-colors shadow-lg shadow-rose-200">
-                    <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
-                    Daughter's 529 Plan
-                </a>
-                
-                <!-- Replace '#' with your son's actual 529 link -->
-                <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-blue-500 hover:bg-blue-600 transition-colors shadow-lg shadow-blue-200">
+                <!-- Venmo links: the amount follows the slider; the note says whose 529 it's for -->
+                <a id="giveMicah" data-note="For Micah's 529" href="https://venmo.com/KatelynMann91?txn=pay&amp;amount=25&amp;note=For%20Micah%27s%20529" class="venmo-link inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-blue-500 hover:bg-blue-600 transition-colors shadow-lg shadow-blue-200">
                     <i data-lucide="baby" class="w-5 h-5 mr-2"></i>
-                    Son's 529 Plan
+                    Micah's 529
+                </a>
+
+                <a id="giveEmery" data-note="For Emery's 529" href="https://venmo.com/KatelynMann91?txn=pay&amp;amount=25&amp;note=For%20Emery%27s%20529" class="venmo-link inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-rose-500 hover:bg-rose-600 transition-colors shadow-lg shadow-rose-200">
+                    <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                    Emery's 529
                 </a>
             </div>
+            <p class="text-sm text-slate-500 mt-5 max-w-md mx-auto">
+                Opens Venmo to <span class="font-semibold text-slate-600">@KatelynMann91</span> with <span id="venmoAmount" class="font-semibold text-slate-600">$25</span> and the note filled in. You can change the amount before you send.
+            </p>
         </section>
 
     </main>
 
     <footer class="text-center py-8 text-slate-400 text-sm">
         <p>Calculations compound annually at an estimated historical rate of 8%.</p>
+        <p class="mt-1">Savings the kids don't use for school can roll into their own Roth IRA for retirement (up to $35,000 each; rules apply).</p>
     </footer>
 
     <!-- Interactive Logic -->
     <script>
         // Initialize Icons
-        lucide.createIcons();
+        if (window.lucide) lucide.createIcons();
 
         // Constants
         const RATE = 0.08;
@@ -168,6 +171,18 @@
             calc18.textContent = formatter.format(val18);
             calc30.textContent = formatter.format(val30);
             calc65.textContent = formatter.format(val65);
+
+            updateVenmoLinks(amount);
+        }
+
+        // Venmo gift links: amount follows the slider, note names the child
+        const VENMO_USER = 'KatelynMann91';
+        function updateVenmoLinks(amount) {
+            document.querySelectorAll('.venmo-link').forEach(link => {
+                const params = new URLSearchParams({ txn: 'pay', amount: String(amount), note: link.dataset.note });
+                link.href = `https://venmo.com/${VENMO_USER}?${params.toString().replace(/\+/g, '%20')}`;
+            });
+            document.getElementById('venmoAmount').textContent = formatter.format(amount);
         }
 
         // Event listeners

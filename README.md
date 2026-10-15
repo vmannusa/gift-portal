@@ -8,7 +8,7 @@ A one-page site for friends and family who ask what to get the kids. Instead of 
 
 - A short note explaining the request (no pressure, small amounts welcome).
 - **"The Magic of Compounding" calculator:** a slider from $5 to $250 shows what that gift could be worth at ages 18, 30 and 65.
-- Two buttons that link to each child's 529 plan contribution page.
+- **Micah's 529** and **Emery's 529** buttons open Venmo (@KatelynMann91) with the slider amount and a note ("For Micah's 529" / "For Emery's 529") filled in. The giver can change the amount before sending.
 - **Link preview:** when the link is texted or posted, it shows a preview card with the title and a sample projection (`og-image.png`).
 
 ## How the numbers are calculated
@@ -29,7 +29,7 @@ Years are counted from birth (age 0). The 8% rate is an estimate based on histor
 
 ## Setup
 
-1. **Add the 529 links.** In `index.html`, find the two buttons under "Contribute to their journey" and replace each `href="#"` with that child's plan gifting link. Many 529 plans offer a shareable gifting page or code (for example through Ugift) so family can contribute without seeing account details.
+1. **Venmo links.** The buttons use `https://venmo.com/<user>?txn=pay&amount=<amount>&note=<note>`. To change the recipient, edit `VENMO_USER` near the bottom of `index.html`; to change a note, edit the button's `data-note`. (A 529 plan's own gifting page, such as Ugift, is an alternative that deposits straight into the account.)
 2. **Change the rate or ages** (optional): edit `RATE`, `YEARS_18`, `YEARS_30` and `YEARS_65` near the bottom of `index.html`.
 3. **Publish:** **Settings > Pages**, source "Deploy from a branch", branch `main`, folder `/ (root)`.
 
