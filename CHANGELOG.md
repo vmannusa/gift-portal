@@ -1,6 +1,7 @@
 # Gift Portal – Change log
 
 ## 2026-10-15
+- **Per-child projections:** new "Grown for each of them" table with Emery (born 2023) and Micah (born 2026), based on the years each has left until 18, 30 and 65. The cards are now labeled "If given to a newborn."
 - **Venmo gift buttons:** "Micah's 529" and "Emery's 529" open Venmo to @KatelynMann91 with the note filled in and the amount taken from the slider.
 - Footer note that unused 529 savings can roll into a Roth IRA (up to $35,000 each).
 - **Link preview:** added a preview image and Open Graph / Twitter tags so the link shows a card with the title, "Skip the toys. A small gift today grows for decades." and a $25 → $3,719 example when shared.

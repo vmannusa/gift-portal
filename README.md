@@ -7,7 +7,8 @@ A one-page site for friends and family who ask what to get the kids. Instead of 
 ## What it does
 
 - A short note explaining the request (no pressure, small amounts welcome).
-- **"The Magic of Compounding" calculator:** a slider from $5 to $250 shows what that gift could be worth at ages 18, 30 and 65.
+- **"The Magic of Compounding" calculator:** a slider from $5 to $250 shows what that gift could be worth at ages 18, 30 and 65 if given to a newborn.
+- **Per-child projections:** a table under the cards shows the same gift grown for Emery (born 2023) and Micah (born 2026), using the years each has left until 18, 30 and 65. Ages update automatically each new year.
 - **Micah's 529** and **Emery's 529** buttons open Venmo (@KatelynMann91) with the slider amount and a note ("For Micah's 529" / "For Emery's 529") filled in. The giver can change the amount before sending.
 - **Link preview:** when the link is texted or posted, it shows a preview card with the title and a sample projection (`og-image.png`).
 
@@ -25,7 +26,7 @@ value = gift × (1 + 0.08) ^ years
 | $25 | $100 | $252 | $3,719 |
 | $100 | $400 | $1,006 | $14,878 |
 
-Years are counted from birth (age 0). The 8% rate is an estimate based on historical long-term market returns, not a guarantee.
+The cards count years from birth (age 0). In the per-child table, `years = target age − (this year − birth year)`, so Emery's numbers are a little lower than a newborn's. Birth years are set in `KIDS` near the bottom of `index.html`. The 8% rate is an estimate based on historical long-term market returns, not a guarantee.
 
 ## Setup
 

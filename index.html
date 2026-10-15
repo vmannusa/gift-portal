@@ -80,7 +80,8 @@
                 </div>
             </div>
 
-            <!-- Dynamic Impact Cards -->
+            <!-- Dynamic Impact Cards (gift given to a newborn) -->
+            <p class="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">If given to a newborn</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
                     <div class="text-sm font-semibold text-indigo-600 mb-1">AGE 18</div>
@@ -96,6 +97,24 @@
                     <div class="text-sm font-semibold text-indigo-200 mb-1">AGE 65</div>
                     <div class="text-sm text-indigo-100 mb-3">Retirement</div>
                     <div id="calc65" class="text-4xl font-bold"></div>
+                </div>
+            </div>
+
+            <!-- Per-child projections (years left until each age, from birth year) -->
+            <div class="mt-12">
+                <p class="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Grown for each of them</p>
+                <div class="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
+                    <table class="w-full text-center">
+                        <thead class="bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            <tr>
+                                <th class="py-3 pl-4 sm:pl-6 pr-2 text-left font-semibold">Who</th>
+                                <th class="py-3 px-2 font-semibold">At 18</th>
+                                <th class="py-3 px-2 font-semibold">At 30</th>
+                                <th class="py-3 pl-2 pr-4 sm:pr-6 font-semibold text-indigo-600">At 65</th>
+                            </tr>
+                        </thead>
+                        <tbody id="kidRows" class="divide-y divide-slate-100"></tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -142,6 +161,13 @@
         const YEARS_30 = 30;
         const YEARS_65 = 65;
 
+        // Each child's birth year; their projections use the years left until 18, 30 and 65
+        const KIDS = [
+            { name: 'Emery', born: 2023, dot: 'bg-rose-500' },
+            { name: 'Micah', born: 2026, dot: 'bg-blue-500' }
+        ];
+        const THIS_YEAR = new Date().getFullYear();
+
         // Elements
         const inputAmount = document.getElementById('customAmount');
         const amountDisplay = document.getElementById('amountDisplay');
@@ -172,7 +198,32 @@
             calc30.textContent = formatter.format(val30);
             calc65.textContent = formatter.format(val65);
 
+            renderKidRows(amount);
             updateVenmoLinks(amount);
+        }
+
+        // Per-child rows: value at each target age given the years they have left
+        function renderKidRows(amount) {
+            const grow = (age, target) => target > age
+                ? formatter.format(amount * Math.pow(1 + RATE, target - age))
+                : '—';
+            document.getElementById('kidRows').innerHTML = KIDS.map(kid => {
+                const age = Math.max(0, THIS_YEAR - kid.born);
+                const ageText = age === 0 ? 'newborn' : `age ${age}`;
+                return `
+                <tr>
+                    <td class="py-4 pl-4 sm:pl-6 pr-2 text-left">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full ${kid.dot}"></span>
+                            <span class="font-semibold text-slate-900">${kid.name}</span>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-0.5 ml-[18px]">born ${kid.born} · ${ageText}</div>
+                    </td>
+                    <td class="py-4 px-2 text-lg font-bold text-slate-900">${grow(age, YEARS_18)}</td>
+                    <td class="py-4 px-2 text-lg font-bold text-slate-900">${grow(age, YEARS_30)}</td>
+                    <td class="py-4 pl-2 pr-4 sm:pr-6 text-lg font-bold text-indigo-600">${grow(age, YEARS_65)}</td>
+                </tr>`;
+            }).join('');
         }
 
         // Venmo gift links: amount follows the slider, note names the child
