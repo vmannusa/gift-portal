@@ -1,6 +1,8 @@
 # Gift Portal – Change log
 
 ## 2026-10-15
+- **Link preview:** added a preview image and Open Graph / Twitter tags so the link shows a card with the title, "Skip the toys. A small gift today grows for decades." and a $25 → $3,719 example when shared.
+- Added a page description for search results.
 - Added this README and change log.
 
 ## 2026-07-07

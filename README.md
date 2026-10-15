@@ -9,6 +9,7 @@ A one-page site for friends and family who ask what to get the kids. Instead of 
 - A short note explaining the request (no pressure, small amounts welcome).
 - **"The Magic of Compounding" calculator:** a slider from $5 to $250 shows what that gift could be worth at ages 18, 30 and 65.
 - Two buttons that link to each child's 529 plan contribution page.
+- **Link preview:** when the link is texted or posted, it shows a preview card with the title and a sample projection (`og-image.png`).
 
 ## How the numbers are calculated
 
@@ -37,6 +38,7 @@ Years are counted from birth (age 0). The 8% rate is an estimate based on histor
 | File | What it is |
 | --- | --- |
 | `index.html` | The whole site. Uses Tailwind CSS, Lucide icons and the Outfit font from CDNs; no build step. |
+| `og-image.png` | 1200×630 preview image shown when the link is shared in texts and social apps. |
 | `CHANGELOG.md` | What changed and when. |
 
 ## Privacy
